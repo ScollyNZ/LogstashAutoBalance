@@ -51,6 +51,7 @@ spec:
       labels:
         env: test
     spec:
+      containers:
       - name: kafka-manager
         image: hlebalbau/kafka-manager:latest
         ports:
