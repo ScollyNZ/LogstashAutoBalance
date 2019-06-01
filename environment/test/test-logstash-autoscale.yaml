@@ -91,6 +91,8 @@ spec:
             cpu: "500m"
       - name: sqllite
         image: nouchka/sqlite3:latest
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
         resources:
           limits:
             memory: "250Mi"
