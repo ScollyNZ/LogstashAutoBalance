@@ -53,3 +53,19 @@ tenant1_device1 3          -               1               -               consu
 tenant1_device1 2          -               1               -               consumer-1-f19fa5c3-4879-4d2a-b324-817dfbb449a3 /10.240.0.15    consumer-1
 tenant1_device1 4          -               1               -               consumer-1-f19fa5c3-4879-4d2a-b324-817dfbb449a3 /10.240.0.15    consumer-1
 ```
+
+1. Deployment .yaml at v0.2 tag deploys kafka, zookeeper, sqllist and python and keeps the alive for interactivity
+
+1. Now to play with the kafka client library on the python node
+
+```bash
+$> kubectl exec -it tasking-manager-58df495f7c-9v8l7 -c monitoring-engine -- /bin/bash
+
+/# pip install kafka-python
+/# python
+/# from kafka import KafkaConsumer
+/# consumer = KafkaConsumer(bootstrap_servers=['10.240.0.10:9092'], group_id='consumer-1')
+/# consumer.topics()
+
+```
+
