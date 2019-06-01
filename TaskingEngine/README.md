@@ -16,7 +16,3 @@ The statistics stored in the SQLite database will be quite specific and the rule
 
 1. Expose a liveliness interface on the container for Kubernetes.
 
-### Process
-
-1. Set up a Kafka cluster in Kubernetes to interogate API for c-lag or c-group offsets per topic
-1.1 Aim to be able to list all topics, all c-groups connected to those topics and what the current c-lag is
