@@ -5,4 +5,4 @@
 
    1. Deploy test-lofstash-autoscale.yaml into a K8s cluster
 
-   1.  
+   1. first deployment accepted by Azure (tagged) but in crash loop
