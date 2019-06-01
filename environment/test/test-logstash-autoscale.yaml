@@ -4,8 +4,6 @@ kind: Deployment
 metadata:
   name: basic-kafka
 spec:
-  selector: 
-    env: test
   replicas: 2
   template:
    spec:
