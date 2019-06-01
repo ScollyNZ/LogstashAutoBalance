@@ -14,7 +14,7 @@ This project is an an experiment to see how practical Kubernetes is for distribu
 1. Launch a replica-set for each topic with 1 replica
 1. Sample c-lag every 10 seconds
 1. If average of last 5 samples < 10 and replica settings > 1, reduce replicas
-1. If average of last 5 samples > 500 and replica settings < limit, add replica
+1. If average of last 5 samples > 500 and replica settings < limit, add replica (replica limit would logically be the partition count)
 1.1 if limit hit raise alert
 1. If average of last 20 samples = 0, remove deployment
 1. If last sample > 0 and replicas = 0, add replica

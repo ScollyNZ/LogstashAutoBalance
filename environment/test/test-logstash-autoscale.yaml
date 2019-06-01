@@ -49,5 +49,11 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
+      - name: monitoring-engine
+        image: python:latest
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
 ---
 
