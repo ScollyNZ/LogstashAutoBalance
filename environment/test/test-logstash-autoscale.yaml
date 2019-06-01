@@ -83,14 +83,16 @@ spec:
       containers:
       - name: monitoring-engine
         image: python:latest
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
         resources:
           limits:
-            memory: "100Mi"
+            memory: "250Mi"
             cpu: "500m"
       - name: sqllite
         image: nouchka/sqlite3:latest
         resources:
           limits:
-            memory: "100Mi"
+            memory: "250Mi"
             cpu: "500m"
 ---
