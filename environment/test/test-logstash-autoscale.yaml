@@ -36,6 +36,21 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-manager
+spec:
+  selector: 
+    matchLabels:
+      env: test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        env: test
+    spec:
       - name: kafka-manager
         image: hlebalbau/kafka-manager:latest
         ports:
