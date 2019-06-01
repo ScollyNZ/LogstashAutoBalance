@@ -86,11 +86,11 @@ spec:
         resources:
           limits:
             memory: "100Mi"
-            cpu: "250m"
+            cpu: "500m"
       - name: sqllite
         image: nouchka/sqlite3:latest
         resources:
           limits:
             memory: "100Mi"
-            cpu: "250m"
+            cpu: "500m"
 ---
