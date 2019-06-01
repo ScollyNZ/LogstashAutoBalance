@@ -65,11 +65,26 @@ spec:
           limits:
             memory: "100Mi"
             cpu: "250m"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasking-manager
+spec:
+  selector: 
+    matchLabels:
+      env: test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        env: test
+    spec:
+      containers:
       - name: monitoring-engine
         image: python:latest
         resources:
           limits:
             memory: "100Mi"
             cpu: "250m"
----
 
