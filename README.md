@@ -1,7 +1,9 @@
 # LogstashAutoBalance
+
 Balance logstash workers for multiple Kafka topics in K8s cluster.
 
 ## Background
+
 In a system that requires a high number of Kafka topics, as well as a high number of Logstash nodes to process those topics, the burden of managing the Logstash processes can be quite high.
 
 This project is an an experiment to see how practical Kubernetes is for distributing processes and services dynamically loaded queues with a low overhead monitoring and tasking engine.
@@ -26,7 +28,7 @@ Action Engine accepts tasks and makes changes
 
 Monitoring Engine Tasks
 
-- Query Kafka 
+- Query Kafka
 -- Query each Kafka server to retrieve queues
 		○ Remove ignored topics
 		○ Add any new topics, remove any topics that no longer exist
@@ -63,6 +65,18 @@ Deployment
 	• Email server? Alerting, Dashboarding
 	• Azure log analytics for monitoring and alerting
 
+
+
+
+______________________________
+Each topic has consumer groups. Each partition has an offset for each consumer group
+If a partition has a lag > 0 and the consumer has > 1 partitions, a new consumer can be added
+If a topic has a unique consumer per partition, adding new consumers won't help
+
+Need to know
+For each topic
+ For each Partition
+  lag, consumer
 
 
 

@@ -63,7 +63,7 @@ spec:
             value: "letmein"
         resources:
           limits:
-            memory: "100Mi"
+            memory: "250Mi"
             cpu: "250m"
 ---
 apiVersion: apps/v1
@@ -93,4 +93,4 @@ spec:
           limits:
             memory: "100Mi"
             cpu: "250m"
-
+---
