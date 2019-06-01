@@ -23,7 +23,7 @@ spec:
           value: "yes"
         resources:
           limits:
-            memory: "128Mi"
+            memory: "3Gi"
             cpu: "500m"
       - name: zookeeper
         image: bitnami/zookeeper:latest
@@ -34,7 +34,7 @@ spec:
           value: "yes"
         resources:
           limits:
-            memory: "128Mi"
+            memory: "3Gi"
             cpu: "500m"
 #      - name: kafka-manager
 #        image: hlebalbau/kafka-manager:latest
