@@ -36,18 +36,18 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
-#      - name: kafka-manager
-#        image: hlebalbau/kafka-manager:latest
-#        ports:
-#        - containerPort: 9000
-#        env:
-#          - name: ZK_HOSTS
-#            value: "localhost:2181"
-#          - name: APPLICATION_SECRET
-#            value: "letmein"
-#        resources:
-#          limits:
-#           memory: "128Mi"
-#            cpu: "500m"
+      - name: kafka-manager
+        image: hlebalbau/kafka-manager:latest
+        ports:
+        - containerPort: 9000
+        env:
+          - name: ZK_HOSTS
+            value: "localhost:2181"
+          - name: APPLICATION_SECRET
+            value: "letmein"
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
 ---
 
