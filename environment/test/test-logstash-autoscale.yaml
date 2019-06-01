@@ -47,13 +47,13 @@ spec:
             value: "letmein"
         resources:
           limits:
-            memory: "1Gi"
-            cpu: "500m"
+            memory: "100Mi"
+            cpu: "250m"
       - name: monitoring-engine
         image: python:latest
         resources:
           limits:
-            memory: "1Gi"
-            cpu: "500m"
+            memory: "100Mi"
+            cpu: "250m"
 ---
 
