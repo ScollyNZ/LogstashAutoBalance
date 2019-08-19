@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         env: test
+        app: kafka
     spec:
       containers:
       - name: kafka 
@@ -52,6 +53,7 @@ spec:
     metadata:
       labels:
         env: test
+        app: kafka-manager
     spec:
       containers:
       - name: kafka-manager
@@ -60,7 +62,7 @@ spec:
         - containerPort: 9000
         env:
           - name: ZK_HOSTS
-            value: "localhost:2181"
+            value: "kafka-service:2181"
           - name: APPLICATION_SECRET
             value: "letmein"
         resources:
@@ -81,6 +83,7 @@ spec:
     metadata:
       labels:
         env: test
+        app: tasking-manager
     spec:
       containers:
       - name: monitoring-engine
@@ -99,4 +102,19 @@ spec:
           limits:
             memory: "250Mi"
             cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-service
+spec:
+  selector:
+    app: kafka
+  ports:
+    - protocol: TCP
+      port: 9092
+      targetPort: 9092
+    - protocol: TCP
+      port: 2181
+      targetPort: 2181
 ---
