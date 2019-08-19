@@ -35,9 +35,15 @@ test
 Kubernetes Python Client Libraries are available [here](https://github.com/kubernetes-client/python).
 
 Notes:
+
 Curl can be added with
 ```
 FROM openjdk:8-jre-alpine
 
 RUN apk --no-cache add curl
+```
+
+Auth for connecting to Azure Kubernetes Service
+```
+az aks get-credentials --resource-group groupname --name clustername
 ```
